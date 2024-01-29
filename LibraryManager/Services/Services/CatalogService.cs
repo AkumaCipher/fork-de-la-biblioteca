@@ -29,5 +29,15 @@ namespace Services.Services
         {
             return _catalogManager.FindBook(id);
         }
+
+        public IEnumerable<Book> ShowFantasyCatalog()
+        {
+            return _catalogManager.DisplayFantasyCatalog();
+        }
+
+        public Book BestRatedBook()
+        {
+            return _catalogManager.BestRatedBook();
+        }
     }
 }

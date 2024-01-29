@@ -13,7 +13,7 @@ namespace BusinessObjects.Entity
         public string? name { get; set; }
         public int? pages { get; set; }
         public Type? type { get; set; }
-        public int? rate { get; set; }
+        public int rate { get; set; }
 
         public Author? author {  get; set; }
         public IEnumerable<Library>? libraries { get; set; }
