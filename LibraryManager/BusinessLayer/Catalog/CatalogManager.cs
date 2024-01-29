@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 
 namespace BusinessLayer.Catalog
 {
-    public class CatalogManager
+    public class CatalogManager : ICatalogManager
     {
         private readonly BookRepository _bookRepository;
 
