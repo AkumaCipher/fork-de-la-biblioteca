@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Entity;
+using DataAccessLayer.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,20 @@ namespace DataAccessLayer.Repository
 {
     public class LibraryRepository : IRepository<Library>
     {
+        private readonly LibraryContext _libraryContext;
+
+        public LibraryRepository(LibraryContext libraryContext)
+        {
+            _libraryContext = libraryContext;
+        }
         public IEnumerable<Library> GetAll()
         {
-            return new List<Library>();
+            return _libraryContext.Libraries.ToList();
         }
 
         public Library Get(int id)
         {
-            return new Library();
+            return _libraryContext.Libraries.Single(library => library.id == id);
         }
     }
 }
